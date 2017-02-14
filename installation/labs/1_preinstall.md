@@ -1,3 +1,37 @@
+Check vm.swappiness
+```
+[root@ip-172-31-14-10 vm]# cat /proc/sys/vm/swappiness
+1
+```
+
+Show the mount attributes of all volumes
+```
+[root@ip-172-31-14-10 vm]# df -aTh
+Filesystem    Type    Size  Used Avail Use% Mounted on
+/dev/xvde     ext4    7.9G  635M  6.9G   9% /
+proc          proc       0     0     0   -  /proc
+sysfs        sysfs       0     0     0   -  /sys
+devpts      devpts       0     0     0   -  /dev/pts
+tmpfs        tmpfs    7.4G     0  7.4G   0% /dev/shm
+none   binfmt_misc       0     0     0   -  /proc/sys/fs/binfmt_misc
+```
+
+Show the reserve space of any non-root, ext-based volumes
+```
+[root@ip-172-31-14-10 vm]# df -
+Filesystem    Type    Size  Used Avail Use% Mounted on
+/dev/xvde     ext4    7.9G  635M  6.9G   9% /
+```
+
+Disable transparent hugepages
+```
+[root@ip-172-31-14-10 mm]# cat /proc/sys/vm/nr_hugepages
+0
+[root@ip-172-31-14-10 mm]# cat /proc/sys/vm/nr_overcommit_hugepages
+0
+```
+
+
 List your network interface configuration
 ```
 [root@ip-172-31-14-10 mm]# ifconfig -a
