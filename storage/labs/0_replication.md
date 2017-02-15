@@ -55,5 +55,5 @@ Checked
 - Restart each node
 - Set private IP --> public IP on /etc/hosts  on both cluster
 - `Could not obtain block: BP-106581566-172.31.8.59-1487053970381:blk_1073742716_1892 file=/tmp/screenthong/source/part-m-00000`
-  This may be the problem; it tried to pick up block from a datanode with private IP, which doesn't work.
+  This may be the problem; it tried to pick up blocks from a datanode with private IP, which doesn't work.
 
