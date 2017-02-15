@@ -44,3 +44,16 @@ Caused by: org.apache.hadoop.hdfs.BlockMissingException: Could not obtain block:
 	at org.apache.hadoop.tools.mapred.RetriableFileCopyCommand.readBytes(RetriableFileCopyCommand.java:286)
 	... 16 more
 ```
+
+Checked
+- Lots of free space
+- Can ping to the other Namenode using public IP
+- Can do LS on the other HDFS using public IP
+- Both removed firewall and security rule is set to All traffic all IP/Port
+- Local put/get file to HDFS work fine
+- Able to do local map reduce
+- Restart each node
+- Set private IP --> public IP on /etc/hosts  on both cluster
+- `Could not obtain block: BP-106581566-172.31.8.59-1487053970381:blk_1073742716_1892 file=/tmp/screenthong/source/part-m-00000`
+  This may be the problem; it tried to pick up block from a datanode with private IP, which doesn't work.
+
