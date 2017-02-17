@@ -76,3 +76,28 @@ Found 7 items
 -rw-r--r--   3 raffles raffles  853333300 2017-02-17 06:27 /user/raffles/tgen512m/part-m-00004
 -rw-r--r--   3 raffles raffles  853333300 2017-02-17 06:27 /user/raffles/tgen512m/part-m-00005
 ```
+
+
+How many blocks : 156
+```
+[root@ip-172-31-7-27 ~]# hdfs fsck -blocks /user/raffles/tgen512m
+Connecting to namenode via http://ip-172-31-1-16.ap-southeast-1.compute.internal:50070
+FSCK started by root (auth:SIMPLE) from /172.31.7.27 for path /user/raffles/tgen512m at Fri Feb 17 06:41:55 UTC 2017
+.......Status: HEALTHY
+ Total size:    5120000000 B
+ Total dirs:    1
+ Total files:   7
+ Total symlinks:                0
+ Total blocks (validated):      156 (avg. block size 32820512 B)
+ Minimally replicated blocks:   156 (100.0 %)
+ Over-replicated blocks:        0 (0.0 %)
+ Under-replicated blocks:       0 (0.0 %)
+ Mis-replicated blocks:         0 (0.0 %)
+ Default replication factor:    3
+ Average block replication:     3.0
+ Corrupt blocks:                0
+ Missing replicas:              0 (0.0 %)
+ Number of data-nodes:          4
+ Number of racks:               1
+FSCK ended at Fri Feb 17 06:41:55 UTC 2017 in 8 milliseconds
+```
